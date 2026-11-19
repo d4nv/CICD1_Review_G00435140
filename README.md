@@ -10,18 +10,18 @@
 Review the code **as submitted in the original examination**. Do not change the original repository, branch or pull request. Check your own Group A or Group B examination paper and award marks only for evidence present in the original submission.
 
 ### Task 1 — /40
-**My mark:**  
-**Evidence from the original code (files, methods, working or missing requirements):**  
+**My mark:** 18
+**Evidence from the original code:** Booking.java has the four required fields (organiser name, attendee count, room ID, status), a no-args and full constructor, and getters/setters, and I attempted validation on every field. However it does not compile: it uses `string` instead of `String`, has a wrong import (IDDV), no @Entity/@Id and no booking id field. The validation annotations are wrong (@NotBlank on ints, @Min/@Max on the name instead of @Size(min=2, max=60)) and not imported. There are no request/response DTOs and status is not set to ACTIVE.
 
 ### Task 2 — /40
-**My mark:**  
-**Evidence from the original code:**  
+**My mark:** 2
+**Evidence from the original code:** I started a service layer (Bookingservice) and custom exceptions, but it was code copied from another lab: it has syntax errors (`bookings; = new`, missing braces), calls getBookingCode(), which does not exist, and has no @Service. BookingController is empty, so there is no POST endpoint. No JPA repository, no Feign client, no room lookup and no capacity check. application.properties has no port 8081, H2 or Feign settings.
 
 ### Task 3 — /20
-**My mark:**  
-**Evidence from the original code:**  
+**My mark:** 0
+**Evidence from the original code:** No GET /api/bookings/{id} endpoint. BookingNotFoundException exists but is never used, and there is no response DTO or 404 handling.
 
-**Total self-assessed original examination mark: /100**
+**Total self-assessed original examination mark: 20/100**
 
 **Checkpoint:** Commit this completed self-assessment as the **first review commit in your new repository**, before you modify or add application code. The lecturer decides the official original examination mark.
 
