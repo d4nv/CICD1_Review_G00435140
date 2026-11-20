@@ -26,9 +26,8 @@
 
 ## 2. Corrections and improvements in my new project
 
-## 2. Corrections and improvements in my new project
 
-**Problem and correction 1:** **Problem and correction 1:** Getting the project set up and running took about half the exam. I didn't really understand the template, so I panicked and copied Bookingservice from an old lab, which didn't fit this task and broke the build. In the new project I started from the fresh template, which already had port 8081, H2 and Feign set up, got it running first, and then wrote service/BookingService from scratch for this task, running it after each class so errors showed up straight away.
+**Problem and correction 1:**  Getting the project set up and running took about half the exam. I didn't really understand the template, so I panicked and copied Bookingservice from an old lab, which didn't fit this task and broke the build. In the new project I started from the fresh template, which already had port 8081, H2 and Feign set up, got it running first, and then wrote service/BookingService from scratch for this task.
 
 **Problem and correction 2:** Booking.java didn't compile and the validation was in the wrong place. I wrote `string` instead of `String`, had no @Entity or @Id, put @NotBlank on ints and had no DTOs. Now model/Booking.java is an @Entity with an @Id Long id. dto/BookingRequest has @NotNull on roomId, @NotBlank and @Size(min=2, max=60) on organiserName, and @NotNull and @Positive on attendeeCount. The controller uses @Valid, so bad input gets a 400 with a clear message.
 
