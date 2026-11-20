@@ -28,7 +28,7 @@
 
 ## 2. Corrections and improvements in my new project
 
-**Problem and correction 1:** Getting the project set up and running took about half the exam. I didn't really understand the template, so I never got the app properly configured. application.properties had no port, H2 or Feign settings, and nothing was connected. In the new project I set up application.properties first (server.port=8081, the H2 datasource and the H2 console) and added @EnableFeignClients to BookingServiceApplication. I got it running before writing any other code, so every step after that could actually be tested.
+**Problem and correction 1:** **Problem and correction 1:** Getting the project set up and running took about half the exam. I didn't really understand the template, so I panicked and copied Bookingservice from an old lab, which didn't fit this task and broke the build. In the new project I started from the fresh template, which already had port 8081, H2 and Feign set up, got it running first, and then wrote service/BookingService from scratch for this task, running it after each class so errors showed up straight away.
 
 **Problem and correction 2:** Booking.java didn't compile and the validation was in the wrong place. I wrote `string` instead of `String`, had no @Entity or @Id, put @NotBlank on ints and had no DTOs. Now model/Booking.java is an @Entity with an @Id Long id. dto/BookingRequest has @NotNull on roomId, @NotBlank and @Size(min=2, max=60) on organiserName, and @NotNull and @Positive on attendeeCount. The controller uses @Valid, so bad input gets a 400 with a clear message.
 
