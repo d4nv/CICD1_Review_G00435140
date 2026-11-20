@@ -31,7 +31,7 @@
 
 **Problem and correction 2:** Booking.java didn't compile and the validation was in the wrong place. I wrote `string` instead of `String`, had no @Entity or @Id, put @NotBlank on ints and had no DTOs. Now model/Booking.java is an @Entity with an @Id Long id. dto/BookingRequest has @NotNull on roomId, @NotBlank and @Size(min=2, max=60) on organiserName, and @NotNull and @Positive on attendeeCount. The controller uses @Valid, so bad input gets a 400 with a clear message.
 
-**Problem and correction 3:** There was no endpoint, no repository and no Feign client. My controller was empty, Now RoomClient calls the Room Service on 8082, BookingService checks the room capacity and saves the booking as ACTIVE, and GET /api/bookings/{id} reads from the local database.
+**Problem and correction 3:** There was no endpoint, no repository and no Feign client. My controller was empty, Now RoomClient calls the Room Service on 8082, BookingService checks the room capacity and saves the booking as ACTIVE, and GET api/bookings/{id} reads from the local database.
 
 ## 3. API testing and evidence
 
